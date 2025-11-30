@@ -150,7 +150,7 @@ export default function HomePage() {
         </p>
         <ul className="space-y-1 list-disc pl-4">
           <li>どんな問い・テーマに長期的に向き合っているのか</li>
-          <li>誰とどんな役割・信頼関係を築いてきたのか</li>
+          <li>誰とどんな役割や信頼関係を築いてきたのか</li>
           <li>失敗や試行錯誤を含めた、学びと協働のプロセス</li>
           <li>地域や小さな組織での評価・役割・温度感</li>
         </ul>
