@@ -84,23 +84,135 @@ export default function HomePage() {
               青海は人の創造的な挑戦の可能性を信じています。
             </p>
             </div>
-            {/* ABOUT / GAFA SECTION */}
-        <section id="about" className="mb-10 md:mb-16">
-          <h3 className="mt-16 mb-4 text-5xl font-semibold text-slate-900">
-            GAFAをリバースエンジニアリングする
-          </h3>
-          <div className="mt-10 space-y-3 text-sm leading-relaxed text-slate-600">
-            <p>
-            青海株式会社は、GAFAが20年かけて築いた「インプレッションを加速させ、
-            人の消費を促すためのデータプラットフォーム」をリバースエンジニアリングし、
-            その構造を「個人の信用と関係性を可視化・資産化して人の挑戦を加速させるプラットフォーム」へ昇華させることをテーマとしています。
-            </p>
-            <p>
-              私たちは、フォロワー数やバズではなく、
-              真の信用とアイデンティティを可視化し、
-              事業創造の楽しさとやりがいを提供します。
-            </p>
-          </div>
+        {/* ABOUT / GAFA SECTION */}
+<section id="about" className="mb-10 md:mb-16">
+  <h3 className="mt-16 mb-4 text-5xl font-semibold text-slate-900">
+    GAFAをリバースエンジニアリングする
+  </h3>
+
+  {/* 説明テキスト */}
+  <div className="mt-6 space-y-3 text-sm leading-relaxed text-slate-600">
+    <p>
+      GAFAは、この20年で世界中の人の生活とビジネスを便利にし、
+      「なにを検索し、なにを見て、なにを買うのか」を精緻に捉える
+      データプラットフォームをつくりあげてきました。
+      私たちは、その偉大な成果に強いリスペクトを持っています。
+    </p>
+    <p>
+      その一方で、広告を中心としたビジネスモデルに最適化してきた結果、
+      ログの中心は「閲覧・クリック・購買」といった
+      <span className="font-semibold">消費の瞬間</span>
+      に寄らざるをえませんでした。
+      これは設計ミスではなく、構造上ごく自然にそうなった帰結だと考えています。
+    </p>
+    <p>
+      だからこそ今、まだ十分にデータ化されていない領域――
+      人がどんな問いに向き合い、誰と何を成し遂げ、
+      どんな関係性と信用を築いてきたのか――を丁寧に可視化していくことに、
+      大きな余白と可能性があると感じています。
+    </p>
+    <p>
+      青海株式会社は、GAFAが20年かけて築いた「インプレッションを加速させ、
+      人の消費を促すためのデータプラットフォーム」をリバースエンジニアリングし、
+      その構造を「個人の信用と関係性を可視化・資産化して人の挑戦を加速させるプラットフォーム」へ昇華させます。
+      そして、クリエイティブな挑戦や創造を加速させ、事業づくりの楽しさとやりがい、自己表現と経済圏を両立する環境を提供します。
+    </p>
+  </div>
+
+  {/* データの対比ブロック */}
+  <div className="mt-8 grid gap-6 md:grid-cols-2">
+    <div className="space-y-2">
+      <h4 className="text-lg font-semibold uppercase tracking-[0.18em] text-slate-500">
+        広告モデルが自然に集めてきたもの
+      </h4>
+      <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4 text-sm leading-relaxed text-slate-600">
+        <p className="mb-2 font-semibold text-slate-800">
+          「人に何を見せ、何を売るか？」のための
+          <span className="underline">消費ログ</span>
+        </p>
+        <ul className="space-y-1 list-disc pl-4">
+          <li>なにをどれくらい見たか（インプレッション・視聴時間）</li>
+          <li>どこをクリックしたか（クリック・CTR）</li>
+          <li>なにを買ったか（購買履歴・コンバージョン）</li>
+          <li>誰をフォローしているか（ソーシャルグラフ）</li>
+        </ul>
+      </div>
+    </div>
+
+    <div className="space-y-2">
+      <h4 className="text-lg font-semibold uppercase tracking-[0.18em] text-slate-500">
+        まだ十分にデータ化されていないもの
+      </h4>
+      <div className="rounded-2xl border border-slate-200 bg-white p-4 text-sm leading-relaxed text-slate-600 shadow-sm">
+        <p className="mb-2 font-semibold text-slate-800">
+          「人の挑戦と信用」のための
+          <span className="underline">挑戦ログ</span>
+        </p>
+        <ul className="space-y-1 list-disc pl-4">
+          <li>どんな問い・テーマに長期的に向き合っているのか</li>
+          <li>誰とどんな役割・信頼関係を築いてきたのか</li>
+          <li>失敗や試行錯誤を含めた、学びと協働のプロセス</li>
+          <li>地域や小さな組織での評価・役割・温度感</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  {/* ターゲティング → コクリエイション のブロック */}
+  <div className="mt-10 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm md:p-7">
+    <h4 className="text-sm font-semibold text-slate-900 md:text-base">
+      ターゲティングから、コ・クリエイションへ
+    </h4>
+    <p className="mt-3 text-sm leading-relaxed text-slate-600">
+      広告費はこれまで、「今期の売上をどれだけ伸ばすか」を最適化するために使われてきました。
+      どの属性に、どのクリエイティブを、どのタイミングで見せれば
+      クリックとコンバージョンが最大化されるか──
+      そのためのターゲティングとA/Bテストが、デジタル広告の中心でした。
+    </p>
+    <p className="mt-3 text-sm leading-relaxed text-slate-600">
+      これはGAFAの設計ミスではなく、広告モデルとしてはきわめてまっとうな進化の結果だと考えています。
+      「確実に、短期で、売上に効くこと」に予算が集まるのは、ごく自然な構造です。
+    </p>
+    <p className="mt-3 text-sm leading-relaxed text-slate-600">
+      一方で、企業が本当に向き合いたいのは、数クリック先の一回きりの購買だけではなく、
+      どんな人たちと長期的な関係性を築き、どんな問いやプロジェクトを一緒に進めていくかという
+      <span className="font-semibold">共創の単位</span>になりつつあります。
+    </p>
+
+    <div className="mt-5 grid gap-5 md:grid-cols-2">
+      <div className="rounded-2xl bg-slate-50 p-4 text-xs leading-relaxed text-slate-600">
+        <p className="mb-2 text-base font-semibold text-slate-800">
+          従来のターゲティング広告
+        </p>
+        <ul className="space-y-1 list-disc pl-4">
+          <li>目的：今期の売上・CVを最大化する</li>
+          <li>単位：インプレッション / クリック / コンバージョン</li>
+          <li>評価指標：CPC / CPA / ROAS</li>
+          <li>関係性：一回きりのタッチポイントになりがち</li>
+        </ul>
+      </div>
+
+      <div className="rounded-2xl bg-slate-900 p-4 text-xs leading-relaxed text-slate-100">
+        <p className="mb-2 text-base font-semibold text-white">
+          コ・クリエイション型のダイレクト広告
+        </p>
+        <ul className="space-y-1 list-disc pl-4 marker:text-slate-200">
+          <li>目的：特定の個人・コミュニティとの関係を育てる</li>
+          <li>単位：共創プロジェクトや学び・アウトプットの履歴</li>
+          <li>評価指標：継続的な関係性と、共創から生まれた価値</li>
+          <li>関係性：「誰とどんな未来をつくるか」が資産になる</li>
+        </ul>
+      </div>
+    </div>
+
+    <p className="mt-4 text-sm leading-relaxed text-slate-600">
+      私たちは、広告費の一部を「誰に何を売るか」を決めるターゲティング費ではなく、
+      「誰とどんな未来をつくるか」に投じる
+      <span className="font-semibold">共創予算</span>として機能させることを目指しています。
+      クリック率ではなく、一緒に積み上がった挑戦の履歴と信用で成果を測る、
+      そんなダイレクトな広告モデルへの移行だと捉えています。
+    </p>
+  </div>
+
           <div className="mt-6 flex flex-wrap gap-3">
             <button
               onClick={() => scrollToSection("myhood")}
