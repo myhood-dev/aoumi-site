@@ -160,7 +160,7 @@ export default function HomePage() {
   {/* ターゲティング → コクリエイション のブロック */}
   <div className="mt-10 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm md:p-7">
     <h4 className="text-sm font-semibold text-slate-900 md:text-base">
-      ターゲティングから、コ・クリエイションへ
+      ターゲティングから、コ・クリエーションへ
     </h4>
     <p className="mt-3 text-sm leading-relaxed text-slate-600">
       広告費はこれまで、「今期の売上をどれだけ伸ばすか」を最適化するために使われてきました。
@@ -193,7 +193,7 @@ export default function HomePage() {
 
       <div className="rounded-2xl bg-slate-900 p-4 text-xs leading-relaxed text-slate-100">
         <p className="mb-2 text-base font-semibold text-white">
-          コ・クリエイション型のダイレクト広告
+        コ・クリエーション型のダイレクト広告
         </p>
         <ul className="space-y-1 list-disc pl-4 marker:text-slate-200">
           <li>目的：特定の個人・コミュニティとの関係を育てる</li>
