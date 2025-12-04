@@ -24,7 +24,6 @@ export default function HomePage() {
   <div className="mx-auto flex max-w-5xl flex-col gap-2 px-4 py-3 md:flex-row md:items-center md:justify-between md:py-4">
     {/* ロゴまわり */}
     <div className="flex items-center gap-3">
-      <div className="flex items-center justify-center rounded-full border border-slate-200/80 bg-white p-1.5 shadow-[0_8px_18px_rgba(15,23,42,0.04)]">
         <Image
           src="/aoumi-logo-top.svg"
           alt="Aoumi Inc."
@@ -32,7 +31,6 @@ export default function HomePage() {
           height={20}
           className="h-8 w-auto"
         />
-      </div>
       <span className="text-xs font-semibold tracking-[0.24em] uppercase text-slate-700 md:text-sm">
         青海株式会社
       </span>
