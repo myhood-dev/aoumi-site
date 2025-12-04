@@ -20,43 +20,54 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-white text-slate-900">
       {/* ====== HEADER ====== */}
-      <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/80 backdrop-blur">
-        <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-3 md:py-4">
-          <div className="flex items-center gap-3">
-            <Image
-              src="/aoumi-logo-top.svg" // ← ロゴファイル名に合わせて変更
-              alt="Aoumi Inc."
-              width={30}
-              height={20}
-              className="h-8 w-auto"
-            />
-            <span className="text-sm font-semibold tracking-[0.18em] uppercase text-slate-700">
-              青海株式会社
-            </span>
-          </div>
+      <header className="sticky top-0 z-40 border-b border-slate-200/80 bg-white/80 backdrop-blur">
+  <div className="mx-auto flex max-w-5xl flex-col gap-2 px-4 py-3 md:flex-row md:items-center md:justify-between md:py-4">
+    {/* ロゴまわり */}
+    <div className="flex items-center gap-3">
+      <div className="flex items-center justify-center rounded-full border border-slate-200/80 bg-white p-1.5 shadow-[0_8px_18px_rgba(15,23,42,0.04)]">
+        <Image
+          src="/aoumi-logo-top.svg"
+          alt="Aoumi Inc."
+          width={30}
+          height={20}
+          className="h-8 w-auto"
+        />
+      </div>
+      <span className="text-xs font-semibold tracking-[0.24em] uppercase text-slate-700 md:text-sm">
+        青海株式会社
+      </span>
+    </div>
 
-          <nav className="hidden gap-6 text-sm font-medium text-slate-600 md:flex">
-            {/* ページ内スクロールするメニュー */}
-            {navItems.map((item) => (
-              <button
-                key={item.target}
-                onClick={() => scrollToSection(item.target)}
-                className="transition hover:text-slate-900"
-              >
-                {item.label}
-              </button>
-            ))}
+    {/* ナビゲーション（スマホでも表示） */}
+    <nav className="flex flex-wrap items-center gap-x-4 gap-y-1 text-[11px] font-medium text-slate-600 md:justify-end md:gap-6 md:text-sm">
+      {/* ページ内スクロールするメニュー */}
+      {navItems.map((item) => (
+        <button
+          key={item.target}
+          onClick={() => scrollToSection(item.target)}
+          className="relative pb-0.5 transition hover:text-slate-900 after:absolute after:inset-x-0 after:-bottom-0.5 after:h-[2px] after:scale-x-0 after:bg-slate-900 after:transition after:duration-200 after:ease-out hover:after:scale-x-100"
+        >
+          {item.label}
+        </button>
+      ))}
 
-            {/* 別ページへ遷移するメニュー */}
-            <Link href="/news" className="transition hover:text-slate-900">
-              News
-            </Link>
-            <Link href="/about" className="transition hover:text-slate-900">
-              About
-            </Link>
-          </nav>
-        </div>
-      </header>
+      {/* 別ページへ遷移するメニュー */}
+      <Link
+        href="/news"
+        className="relative pb-0.5 transition hover:text-slate-900 after:absolute after:inset-x-0 after:-bottom-0.5 after:h-[2px] after:scale-x-0 after:bg-slate-900 after:transition after:duration-200 after:ease-out hover:after:scale-x-100"
+      >
+        News
+      </Link>
+      <Link
+        href="/about"
+        className="relative pb-0.5 transition hover:text-slate-900 after:absolute after:inset-x-0 after:-bottom-0.5 after:h-[2px] after:scale-x-0 after:bg-slate-900 after:transition after:duration-200 after:ease-out hover:after:scale-x-100"
+      >
+        About
+      </Link>
+    </nav>
+  </div>
+</header>
+
 
       {/* ====== MAIN ====== */}
       <main className="mx-auto max-w-5xl px-4 pb-16 pt-10 md:pt-16">
