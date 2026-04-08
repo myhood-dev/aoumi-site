@@ -1,14 +1,17 @@
-import Image from "next/image";
+"use client";
+
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import Reveal from "@/components/Reveal";
 import Link from "next/link";
 
 type NewsItem = {
-date: string;
-title: string;
-body?: string;
+  date: string;
+  title: string;
+  body?: string;
 };
 
 const newsItems: NewsItem[] = [
-  // 例：
   // {
   //   date: "2025-03-01",
   //   title: "MyHood ティザーサイト公開",
@@ -17,107 +20,71 @@ const newsItems: NewsItem[] = [
 ];
 
 export default function NewsPage() {
-const hasNews = newsItems.length > 0;
+  const hasNews = newsItems.length > 0;
 
-return (
+  return (
     <div className="min-h-screen bg-white text-slate-900">
-      {/* HEADER */}
-    <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/80 backdrop-blur">
-<div className="mx-auto flex max-w-5xl flex-col gap-2 px-4 py-3 md:flex-row md:items-center md:justify-between md:py-4">
-    {/* ロゴまわり（円なし） */}
-    <div className="flex items-center gap-3">
-    <Image
-        src="/aoumi-logo-top.svg"
-        alt="Aoumi Inc."
-        width={30}
-        height={20}
-        className="h-8 w-auto"
-    />
-    <span className="text-xs font-semibold tracking-[0.24em] uppercase text-slate-700 md:text-sm">
-        青海株式会社
-    </span>
-    </div>
+      <Header activePage="news" />
 
-    {/* ナビ（スマホでも表示） */}
-    <nav className="flex flex-wrap items-center gap-x-4 gap-y-1 text-[11px] font-medium text-slate-600 md:justify-end md:gap-6 md:text-sm">
-    <Link href="/" className="transition hover:text-slate-900">
-        Top
-    </Link>
-    <Link href="/#myhood" className="transition hover:text-slate-900">
-        MyHood
-    </Link>
-    <Link href="/#apps" className="transition hover:text-slate-900">
-        Apps
-    </Link>
-    <Link href="/#frontline" className="transition hover:text-slate-900">
-        Frontline
-    </Link>
-    <span className="text-slate-400">News</span>
-    <Link href="/about" className="transition hover:text-slate-900">
-        About
-    </Link>
-    </nav>
-</div>
-</header>
-
-
-      {/* MAIN */}
-    <main className="mx-auto max-w-5xl px-4 pb-16 pt-10 md:pt-16">
-        <h1 className="text-5xl font-semibold tracking-tight text-slate-900 md:text-4xl">
-        News
-        </h1>
+      <main className="mx-auto max-w-5xl px-5 pb-16 pt-14 md:px-8 md:pt-20">
+        <Reveal>
+          <p className="text-[11px] font-semibold tracking-[0.3em] uppercase text-slate-400">
+            Updates
+          </p>
+          <h1 className="mt-3 font-serif text-3xl font-normal tracking-tight text-slate-900 md:text-4xl">
+            News
+          </h1>
+        </Reveal>
 
         {hasNews ? (
-        <ul className="mt-8 space-y-6">
-            {newsItems.map((item) => (
-            <li
-                key={`${item.date}-${item.title}`}
-                className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"
-            >
-                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">
-                {item.date}
-                </p>
-                <h2 className="mt-2 text-base font-semibold text-slate-900">
-                {item.title}
-                </h2>
-                {item.body && (
-                <p className="mt-2 text-sm leading-relaxed text-slate-600">
-                    {item.body}
-                </p>
-                )}
-            </li>
+          <ul className="mt-10 space-y-5">
+            {newsItems.map((item, i) => (
+              <Reveal key={`${item.date}-${item.title}`} delay={i * 80}>
+                <li className="rounded-2xl border border-slate-200/80 bg-white p-5 transition-all duration-300 hover:shadow-md md:p-6">
+                  <p className="text-[11px] font-semibold tracking-[0.2em] uppercase text-slate-400">
+                    {item.date}
+                  </p>
+                  <h2 className="mt-2 text-base font-semibold text-slate-900">
+                    {item.title}
+                  </h2>
+                  {item.body && (
+                    <p className="mt-2 text-sm leading-relaxed text-slate-600">
+                      {item.body}
+                    </p>
+                  )}
+                </li>
+              </Reveal>
             ))}
-        </ul>
+          </ul>
         ) : (
-        <p className="mt-6 text-sm text-slate-600">
-            現在掲載中のお知らせはありません。プロダクトやコミュニティの進捗は、
-            Top ページおよび各プロジェクトの発信でお知らせしていきます。
-        </p>
+          <Reveal delay={100}>
+            <div className="mt-10 rounded-2xl border border-dashed border-slate-200 bg-slate-50/50 px-6 py-12 text-center">
+              <p className="text-sm text-slate-500">
+                現在掲載中のお知らせはありません。
+              </p>
+              <p className="mt-1 text-xs text-slate-400">
+                プロダクトやコミュニティの進捗は、Topページおよび各プロジェクトの発信でお知らせしていきます。
+              </p>
+            </div>
+          </Reveal>
         )}
 
-        <div className="mt-10">
-        <Link
-            href="/"
-            className="text-sm font-semibold text-sky-700 underline-offset-4 hover:underline"
-        >
-            ← トップページに戻る
-        </Link>
-        </div>
-    </main>
+        <Reveal delay={200}>
+          <div className="mt-10">
+            <Link
+              href="/"
+              className="group inline-flex items-center gap-1.5 text-sm font-semibold text-cyan-700 transition-colors hover:text-cyan-900"
+            >
+              <span className="transition-transform duration-200 group-hover:-translate-x-0.5" aria-hidden>
+                &larr;
+              </span>
+              トップページに戻る
+            </Link>
+          </div>
+        </Reveal>
+      </main>
 
-      {/* FOOTER */}
-    <footer className="border-t border-slate-200 pt-6 text-xs text-slate-500">
-        <div className="mx-auto flex max-w-5xl flex-col items-start justify-between gap-3 px-4 pb-4 md:flex-row md:items-center">
-        <p>© {new Date().getFullYear()} Aoumi Inc. All rights reserved.</p>
-        <a
-            href="mailto:info@aoumi.art"
-            className="text-slate-600 underline-offset-4 hover:underline"
-        >
-            Contact: info@aoumi.art
-        </a>
-        </div>
-    </footer>
+      <Footer />
     </div>
-);
+  );
 }
-
