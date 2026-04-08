@@ -6,7 +6,6 @@ import Link from "next/link";
 const navItems = [
   { label: "Top", target: "top" },
   { label: "MyHood", target: "myhood" },
-  { label: "Apps", target: "apps" },
   { label: "Frontline", target: "frontline" },
 ];
 
@@ -230,10 +229,10 @@ export default function HomePage() {
               MyHoodとは？
             </button>
             <button
-              onClick={() => scrollToSection("apps")}
+              onClick={() => scrollToSection("frontline")}
               className="rounded-full border border-slate-300 px-5 py-2 text-sm font-semibold text-slate-800 hover:bg-slate-50"
             >
-              フォーカスアプリシリーズを見る
+              フロントラインを見る
             </button>
           </div>
         </section>
@@ -275,63 +274,6 @@ export default function HomePage() {
                 MyHood α版を見る
                 <span aria-hidden>↗</span>
               </a>
-            </div>
-          </div>
-        </section>
-
-        {/* APPS SECTION */}
-        <section id="apps" className="mb-20 md:mb-24">
-          <h2 className="text-xl font-semibold uppercase tracking-[0.24em] text-slate-500">
-            フォーカスアプリシリーズ
-          </h2>
-          <p className="mt-3 text-sm text-slate-600">
-          青海は、自己開示・内省・共創プロジェクトなどのシーンごとにフォーカスしたアプリを起点に、日々のログを MyHood に集約し、一人ひとりの「信用」と「アイデンティティ」を可視化する構造をつくっています。
-          </p>
-
-          <div className="mt-6 grid gap-5 md:grid-cols-3">
-            {/* Icebreak */}
-            <div className="group flex flex-col justify-between rounded-2xl border border-slate-200 bg-slate-50 p-4 transition hover:-translate-y-1 hover:border-sky-300 hover:bg-white hover:shadow-sm">
-              <div className="space-y-2">
-                <h3 className="text-sm font-semibold text-slate-900">
-                  アイスブレイク-名刺をインララクティブに
-                </h3>
-                <p className="text-xs leading-relaxed text-slate-600">
-                  自己開示と内面のつながりのハードルを下げる対話円滑化ツール。
-                  </p>
-                <p className="text-xs leading-relaxed text-slate-600">
-                  初対面やチーム内で相手との距離を一気に縮めます。
-                </p>
-              </div>
-            </div>
-
-            {/* Diary Log */}
-            <div className="group flex flex-col justify-between rounded-2xl border border-slate-200 bg-slate-50 p-4 transition hover:-translate-y-1 hover:border-sky-300 hover:bg-white hover:shadow-sm">
-              <div className="space-y-2">
-                <h3 className="text-sm font-semibold text-slate-900">
-                  ダイアリーログ-経験や活動をデジタル資産に
-                </h3>
-                <p className="text-xs leading-relaxed text-slate-600">
-                  日報・ふりかえり・感情のメモを一つにまとめる内省可視化ツール。
-                  </p>
-                <p className="text-xs leading-relaxed text-slate-600">
-                  自分だけのメモで終わらせず、必要に応じてチームに共有したり、蓄積されたログを MyHood のキャリアプロファイルに活かすことで、日々の経験がそのまま「経験資産」として積み上がっていきます。
-                </p>
-              </div>
-            </div>
-
-            {/* Co-creation Mission */}
-            <div className="group flex flex-col justify-between rounded-2xl border border-slate-200 bg-slate-50 p-4 transition hover:-translate-y-1 hover:border-sky-300 hover:bg-white hover:shadow-sm">
-              <div className="space-y-2">
-                <h3 className="text-sm font-semibold text-slate-900">
-                  共創ミッション-経済圏をカジュアルに
-                </h3>
-                  <p className="text-xs leading-relaxed text-slate-600">
-                    企業のリアルな課題に取り組む若手クリエイターとの共創プロジェクトを、ツール上でカジュアルに実現する経済圏創造ツール。
-                    </p>
-                  <p className="text-xs leading-relaxed text-slate-600">
-                    広告・人材・コンサル・商社・M&Aにかかっていた予算を、若手との共創に投資する「クリエイターエコノミー」に置き換え、企業のリアルな課題解決と、若手のバイトをしなくても良いセーフティーネット構築を同時に実現します。
-                    </p>
-              </div>
             </div>
           </div>
         </section>
