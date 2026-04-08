@@ -11,6 +11,7 @@ type Props = {
 const scrollNavItems = [
   { label: "MyHood", target: "myhood" },
   { label: "Frontline", target: "frontline" },
+  { label: "Service", target: "service" },
   { label: "Why", target: "why" },
 ];
 

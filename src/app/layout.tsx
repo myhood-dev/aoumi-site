@@ -15,13 +15,13 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "青海株式会社",
   description:
-    "GAFAをリバースエンジニアリングし、人の挑戦と信用を可視化するライフスタイルプラットフォームMyHood",
+    "若手と企業を実践活動でつなぎ、挑戦と信用が積み上がるプラットフォームをつくっています。",
   metadataBase: new URL("https://www.aoumi.art"),
 
   openGraph: {
     title: "青海株式会社",
     description:
-      "GAFAをリバースエンジニアリングし、人の挑戦と信用を可視化するライフスタイルプラットフォームMyHood",
+      "若手と企業を実践活動でつなぎ、挑戦と信用が積み上がるプラットフォームをつくっています。",
     url: "https://www.aoumi.art",
     siteName: "青海株式会社",
     type: "website",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "青海株式会社",
     description:
-      "GAFAをリバースエンジニアリングし、人の挑戦と信用を可視化するライフスタイルプラットフォームMyHood",
+      "若手と企業を実践活動でつなぎ、挑戦と信用が積み上がるプラットフォームをつくっています。",
     images: ["/og-aoumi.jpg"],
   },
 };
@@ -53,19 +53,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
-      <head>
-        {/* Display serif font for headings */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Noto+Serif+JP:wght@400;500;600&display=swap"
-          rel="stylesheet"
-        />
-      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

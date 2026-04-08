@@ -8,15 +8,20 @@ import Link from "next/link";
 type NewsItem = {
   date: string;
   title: string;
-  body?: string;
+  body: string;
+  link?: { label: string; href: string };
 };
 
 const newsItems: NewsItem[] = [
-  // {
-  //   date: "2025-03-01",
-  //   title: "MyHood ティザーサイト公開",
-  //   body: "Z世代と企業の共創をテーマにしたライフスタイルプラットフォーム MyHood のティザーサイトを公開しました。",
-  // },
+  {
+    date: "2026-03-15",
+    title: "「起業家の本音」YouTubeチャンネルを始動",
+    body: "起業家の思想の可視化を目的としたYouTubeチャンネル「起業家の本音」を開設しました。従来のピッチ（プレゼン）ではなく、起業家同士の対話を通じて、プロダクトに込められた考えや価値を明らかにします。起業家が中心となり、お互いが動きやすくなるためのハブとなるコンテンツを目指しています。特に地域で活動する起業家が、異なるコミュニティに対して自身のアイデンティティや文脈を伝える際の手助けとなることを意図しています。起業家自身の活動を加速させるだけでなく、動画を見た視聴者が「挑戦」に向けた行動変容を起こすきっかけになることを最終的な意義として掲げています。すでに数本の動画が撮影されており、今後順次アップロードされる予定です。",
+    link: {
+      label: "チャンネルを見る",
+      href: "https://www.youtube.com/@%E8%B5%B7%E6%A5%AD%E5%AE%B6%E3%83%81%E3%83%A3%E3%83%B3%E3%83%8D%E3%83%AB/",
+    },
+  },
 ];
 
 export default function NewsPage() {
@@ -31,7 +36,7 @@ export default function NewsPage() {
           <p className="text-[11px] font-semibold tracking-[0.3em] uppercase text-slate-400">
             Updates
           </p>
-          <h1 className="mt-3 font-serif text-3xl font-normal tracking-tight text-slate-900 md:text-4xl">
+          <h1 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
             News
           </h1>
         </Reveal>
@@ -44,13 +49,27 @@ export default function NewsPage() {
                   <p className="text-[11px] font-semibold tracking-[0.2em] uppercase text-slate-400">
                     {item.date}
                   </p>
-                  <h2 className="mt-2 text-base font-semibold text-slate-900">
+                  <h2 className="mt-2 text-base font-bold text-slate-900">
                     {item.title}
                   </h2>
-                  {item.body && (
-                    <p className="mt-2 text-sm leading-relaxed text-slate-600">
-                      {item.body}
-                    </p>
+                  <p className="mt-3 text-sm leading-[1.8] text-slate-600">
+                    {item.body}
+                  </p>
+                  {item.link && (
+                    <a
+                      href={item.link.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="group mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-cyan-700 transition-colors hover:text-cyan-900"
+                    >
+                      {item.link.label}
+                      <span
+                        className="transition-transform duration-200 group-hover:translate-x-0.5"
+                        aria-hidden
+                      >
+                        &rarr;
+                      </span>
+                    </a>
                   )}
                 </li>
               </Reveal>
@@ -62,9 +81,6 @@ export default function NewsPage() {
               <p className="text-sm text-slate-500">
                 現在掲載中のお知らせはありません。
               </p>
-              <p className="mt-1 text-xs text-slate-400">
-                プロダクトやコミュニティの進捗は、Topページおよび各プロジェクトの発信でお知らせしていきます。
-              </p>
             </div>
           </Reveal>
         )}
@@ -75,7 +91,10 @@ export default function NewsPage() {
               href="/"
               className="group inline-flex items-center gap-1.5 text-sm font-semibold text-cyan-700 transition-colors hover:text-cyan-900"
             >
-              <span className="transition-transform duration-200 group-hover:-translate-x-0.5" aria-hidden>
+              <span
+                className="transition-transform duration-200 group-hover:-translate-x-0.5"
+                aria-hidden
+              >
                 &larr;
               </span>
               トップページに戻る

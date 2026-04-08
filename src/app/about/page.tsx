@@ -10,7 +10,8 @@ const companyInfo = [
   { label: "設立", value: "2023年4月12日" },
   {
     label: "事業内容",
-    value: "ITサービスの企画・開発・運用\nコミュニティ運営\nコンテンツの企画・制作",
+    value:
+      "ITサービスの企画・開発・運用\nコミュニティ運営\nコンテンツの企画・制作\n顧客体験と採用定着力強化の事業伴走",
   },
   { label: "役員", value: "代表取締役 CEO  渡辺 啓太" },
   { label: "適格請求書発行事業者登録番号", value: "T5190001030337" },
@@ -27,7 +28,7 @@ export default function AboutPage() {
           <p className="text-[11px] font-semibold tracking-[0.3em] uppercase text-slate-400">
             About
           </p>
-          <h1 className="mt-3 font-serif text-3xl font-normal tracking-tight text-slate-900 md:text-4xl">
+          <h1 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
             会社概要
           </h1>
           <p className="mt-4 text-sm leading-relaxed text-slate-500 md:text-[15px]">
@@ -60,7 +61,10 @@ export default function AboutPage() {
               href="/"
               className="group inline-flex items-center gap-1.5 text-sm font-semibold text-cyan-700 transition-colors hover:text-cyan-900"
             >
-              <span className="transition-transform duration-200 group-hover:-translate-x-0.5" aria-hidden>
+              <span
+                className="transition-transform duration-200 group-hover:-translate-x-0.5"
+                aria-hidden
+              >
                 &larr;
               </span>
               トップページに戻る

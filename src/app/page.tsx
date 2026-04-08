@@ -16,19 +16,16 @@ export default function HomePage() {
       <Header activePage="top" />
 
       {/* ============================== HERO ============================== */}
-      <section
-        id="top"
-        className="relative overflow-hidden"
-      >
+      <section id="top" className="relative overflow-hidden">
         {/* Decorative background */}
         <div className="pointer-events-none absolute inset-0 -z-10">
           <div className="absolute -right-40 -top-40 h-[600px] w-[600px] rounded-full bg-gradient-to-br from-cyan-100/40 via-sky-50/30 to-transparent blur-3xl" />
           <div className="absolute -bottom-20 -left-32 h-[500px] w-[500px] rounded-full bg-gradient-to-tr from-emerald-50/40 via-teal-50/20 to-transparent blur-3xl" />
-          {/* Subtle dot grid */}
           <div
             className="absolute inset-0 opacity-[0.03]"
             style={{
-              backgroundImage: "radial-gradient(circle, #334155 1px, transparent 1px)",
+              backgroundImage:
+                "radial-gradient(circle, #334155 1px, transparent 1px)",
               backgroundSize: "32px 32px",
             }}
           />
@@ -52,7 +49,7 @@ export default function HomePage() {
           {/* Tagline */}
           <Reveal delay={200}>
             <div className="mx-auto mt-10 max-w-3xl text-center">
-              <h1 className="font-serif text-3xl font-normal leading-snug tracking-tight text-slate-800 md:text-[2.75rem] md:leading-snug">
+              <h1 className="text-3xl font-semibold leading-snug tracking-tight text-slate-800 md:text-[2.75rem] md:leading-snug">
                 We believe in the potential of{" "}
                 <span className="relative inline-block">
                   <span className="bg-gradient-to-r from-cyan-600 via-sky-500 to-emerald-500 bg-clip-text text-transparent">
@@ -78,117 +75,130 @@ export default function HomePage() {
                 <span className="absolute inset-0 -z-0 bg-gradient-to-r from-cyan-600 to-emerald-600 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
               </button>
               <button
-                onClick={() => scrollToSection("frontline")}
+                onClick={() => scrollToSection("service")}
                 className="rounded-full border border-slate-200 px-6 py-2.5 text-sm font-semibold text-slate-700 transition-all duration-300 hover:border-slate-300 hover:bg-slate-50 hover:shadow-sm"
               >
-                フロントラインを見る
+                事業内容を見る
               </button>
             </div>
           </Reveal>
         </div>
 
-        {/* Section divider */}
         <div className="h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
       </section>
 
       {/* ============================== MYHOOD ============================== */}
       <section id="myhood" className="relative bg-slate-50/50 py-20 md:py-28">
-        {/* Decorative */}
         <div className="pointer-events-none absolute right-0 top-0 h-72 w-72 rounded-full bg-cyan-50/50 blur-3xl" />
 
         <div className="mx-auto max-w-6xl px-5 md:px-8">
           <Reveal>
-            <p className="text-[11px] font-semibold tracking-[0.3em] uppercase text-cyan-600/80">
-              Lifestyle Platform
-            </p>
-            <h2 className="mt-3 font-serif text-2xl font-normal tracking-tight text-slate-900 md:text-4xl">
+            <div className="flex items-center gap-3">
+              <p className="text-[11px] font-semibold tracking-[0.3em] uppercase text-cyan-600/80">
+                Lifestyle Platform
+              </p>
+              <span className="rounded-full border border-cyan-200 bg-cyan-50 px-2.5 py-0.5 text-[10px] font-semibold text-cyan-700">
+                &beta;版検証中
+              </span>
+            </div>
+            <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
               MyHood
             </h2>
             <p className="mt-1 text-sm text-slate-400 md:text-base">
-              人の挑戦を加速させるライフスタイルプラットフォーム
+              若手と企業を、実践でつなぐ共創プラットフォーム
             </p>
           </Reveal>
 
-          <div className="mt-10 grid gap-8 md:grid-cols-5">
-            {/* Main description card */}
-            <Reveal delay={100} className="md:col-span-3">
-              <div className="h-full rounded-3xl border border-slate-200/80 bg-white p-6 shadow-sm shadow-slate-100 transition-shadow duration-300 hover:shadow-md md:p-8">
-                <div className="space-y-4">
-                  <p className="text-sm leading-[1.8] text-slate-600 md:text-[15px]">
-                    MyHoodは、日々のセンテンス・ダイアリーログ・共創ミッションの
-                    履歴を集約し、「どんな問いに向き合い、誰と何を成し遂げてきたか」
-                    を可視化する信用の台帳です。
-                  </p>
-                  <p className="text-sm leading-[1.8] text-slate-600 md:text-[15px]">
-                    デジタルネイティブ世代と企業の境目を溶かす、
-                    長期的な信用と共創のエコシステムをつくっていきます。
-                  </p>
-                </div>
-                <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:gap-4">
-                  <a
-                    href="https://myhood.aoumi.art"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="group inline-flex items-center gap-1.5 text-sm font-semibold text-cyan-700 transition-colors hover:text-cyan-900"
-                  >
-                    ティザーサイトを見る
-                    <span className="transition-transform duration-200 group-hover:translate-x-0.5" aria-hidden>
-                      &rarr;
-                    </span>
-                  </a>
-                  <a
-                    href="https://myhood.flutterflow.app/profile"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="group inline-flex items-center gap-1.5 text-sm font-semibold text-cyan-700 transition-colors hover:text-cyan-900"
-                  >
-                    &alpha;版を見る
-                    <span className="transition-transform duration-200 group-hover:translate-x-0.5" aria-hidden>
-                      &rarr;
-                    </span>
-                  </a>
-                </div>
+          {/* Description card */}
+          <Reveal delay={100}>
+            <div className="mt-10 rounded-3xl border border-slate-200/80 bg-white p-6 shadow-sm shadow-slate-100 md:p-8">
+              <div className="max-w-2xl space-y-4">
+                <p className="text-sm leading-[1.8] text-slate-600 md:text-[15px]">
+                  MyHoodは、企業と若手を実践活動でつなぐ若手実践共創プラットフォームです。
+                  一社に閉じるインターンではなく、複数の企業と横断的に関わりながら、
+                  将来につながる経験と収入を積み上げる「MyHoodプレイヤー」を増やします。
+                </p>
               </div>
-            </Reveal>
+              <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:gap-4">
+                <a
+                  href="https://teaser.myhood.aoumi.art/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group inline-flex items-center gap-1.5 text-sm font-semibold text-cyan-700 transition-colors hover:text-cyan-900"
+                >
+                  ティザーサイトを見る
+                  <span
+                    className="transition-transform duration-200 group-hover:translate-x-0.5"
+                    aria-hidden
+                  >
+                    &rarr;
+                  </span>
+                </a>
+                <a
+                  href="https://myhood.flutterflow.app/profile"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group inline-flex items-center gap-1.5 text-sm font-semibold text-cyan-700 transition-colors hover:text-cyan-900"
+                >
+                  &beta;版を見る
+                  <span
+                    className="transition-transform duration-200 group-hover:translate-x-0.5"
+                    aria-hidden
+                  >
+                    &rarr;
+                  </span>
+                </a>
+              </div>
+            </div>
+          </Reveal>
 
-            {/* Feature highlights */}
-            <Reveal delay={250} className="md:col-span-2">
-              <div className="flex h-full flex-col gap-4">
-                {[
-                  {
-                    icon: "01",
-                    title: "信用の可視化",
-                    desc: "挑戦・共創の履歴が信用スコアとして蓄積",
-                  },
-                  {
-                    icon: "02",
-                    title: "共創エコシステム",
-                    desc: "Z世代と企業をつなぐ長期的な関係構築",
-                  },
-                  {
-                    icon: "03",
-                    title: "ライフログ集約",
-                    desc: "日々の活動がキャリア資産として積み上がる",
-                  },
-                ].map((item) => (
-                  <div
-                    key={item.icon}
-                    className="group flex-1 rounded-2xl border border-slate-200/80 bg-white p-4 transition-all duration-300 hover:border-cyan-200 hover:shadow-sm"
-                  >
-                    <span className="text-[11px] font-bold tracking-wider text-cyan-500/70">
-                      {item.icon}
-                    </span>
-                    <h4 className="mt-1 text-sm font-semibold text-slate-800">
-                      {item.title}
-                    </h4>
-                    <p className="mt-1 text-xs leading-relaxed text-slate-500">
-                      {item.desc}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </Reveal>
-          </div>
+          {/* 5 feature cards */}
+          <Reveal delay={200}>
+            <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+              {[
+                {
+                  num: "01",
+                  title: "活動ログを積み上げる",
+                  desc: "日々の活動や発信が、自分だけのログとして蓄積されていく",
+                },
+                {
+                  num: "02",
+                  title: "実績を可視化する",
+                  desc: "取り組みや成果が、プロフィールページとして見える形になる",
+                },
+                {
+                  num: "03",
+                  title: "企業との実践につながる",
+                  desc: "ログや実績をもとに、企業との仕事や実践活動の機会が生まれる",
+                },
+                {
+                  num: "04",
+                  title: "信用が積み上がる",
+                  desc: "活動の履歴が、次の仕事やチャンスにつながる信用になる",
+                },
+                {
+                  num: "05",
+                  title: "経験と収入を両立する",
+                  desc: "収入だけでなく、将来につながる経験や実績が資産として残る",
+                },
+              ].map((item) => (
+                <div
+                  key={item.num}
+                  className="group rounded-2xl border border-slate-200/80 bg-white p-4 transition-all duration-300 hover:border-cyan-200 hover:shadow-sm"
+                >
+                  <span className="text-[11px] font-bold tracking-wider text-cyan-500/70">
+                    {item.num}
+                  </span>
+                  <h4 className="mt-1.5 text-sm font-semibold text-slate-800">
+                    {item.title}
+                  </h4>
+                  <p className="mt-1.5 text-xs leading-relaxed text-slate-500">
+                    {item.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </Reveal>
         </div>
       </section>
 
@@ -201,11 +211,11 @@ export default function HomePage() {
             <p className="text-[11px] font-semibold tracking-[0.3em] uppercase text-emerald-600/80">
               Community
             </p>
-            <h2 className="mt-3 font-serif text-2xl font-normal tracking-tight text-slate-900 md:text-4xl">
+            <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
               フロントライン
             </h2>
             <p className="mt-1 text-sm text-slate-400 md:text-base">
-              共創するコミュニティ経済圏
+              人と企業が交わる、実践と共創の場
             </p>
           </Reveal>
 
@@ -213,12 +223,14 @@ export default function HomePage() {
             <div className="mt-10 rounded-3xl border border-slate-200/80 bg-gradient-to-br from-white to-slate-50/50 p-6 shadow-sm shadow-slate-100 md:p-10">
               <div className="max-w-2xl space-y-4">
                 <p className="text-sm leading-[1.8] text-slate-600 md:text-[15px]">
-                  フロントラインは、人々がコンテンツを通じてリアル・本音で繋がり、
-                  共創するコミュニティ経済圏です。
+                  フロントラインは、地域企業・学生・若手・実務者が交わり、
+                  イベント・ワークショップ・共創を通じて
+                  実際の仕事や価値が生まれる実践の場です。
                 </p>
                 <p className="text-sm leading-[1.8] text-slate-600 md:text-[15px]">
-                  企業スポンサーとZ世代のあいだで、講座・イベント・共創ミッションを通じて
-                  実際の案件と報酬が動き、その履歴がMyHood上の信用として可視化されていきます。
+                  MyHoodが挑戦や実績を積み上げる土台なら、
+                  フロントラインは実際に人と企業が出会い、動き出す現場。
+                  MyHood上のコミュニティのひとつとして、青海が自ら運営しています。
                 </p>
               </div>
             </div>
@@ -228,9 +240,170 @@ export default function HomePage() {
 
       <div className="h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
 
+      {/* ============================== SERVICE ============================== */}
+      <section id="service" className="relative bg-slate-50/50 py-20 md:py-28">
+        <div className="mx-auto max-w-6xl px-5 md:px-8">
+          <Reveal>
+            <p className="text-[11px] font-semibold tracking-[0.3em] uppercase text-slate-400">
+              Service
+            </p>
+            <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
+              3つの事業
+            </h2>
+            <p className="mt-1 text-sm text-slate-400 md:text-base">
+              青海株式会社の事業の柱
+            </p>
+          </Reveal>
+
+          <Reveal delay={100}>
+            <div className="mt-10 grid gap-5 md:grid-cols-3">
+              {/* MyHood */}
+              <div className="group flex flex-col rounded-3xl border border-slate-200/80 bg-white p-6 transition-all duration-300 hover:border-cyan-200 hover:shadow-md md:p-7">
+                <p className="text-[11px] font-bold tracking-[0.2em] uppercase text-cyan-600/70">
+                  Platform
+                </p>
+                <h3 className="mt-2 text-lg font-bold text-slate-900">
+                  MyHood
+                </h3>
+                <p className="mt-1 mb-3 text-xs font-semibold text-slate-400">
+                  若手実践共創プラットフォーム
+                </p>
+                <p className="text-sm leading-[1.8] text-slate-600">
+                  若手と企業を実践活動でつなぎ、
+                  信用と経験が積み上がる基盤を提供します。
+                </p>
+                <div className="mt-auto pt-4">
+                  <button
+                    onClick={() => scrollToSection("myhood")}
+                    className="text-xs font-semibold text-cyan-700 transition-colors hover:text-cyan-900"
+                  >
+                    詳しく見る &rarr;
+                  </button>
+                </div>
+              </div>
+
+              {/* Frontline */}
+              <div className="group flex flex-col rounded-3xl border border-slate-200/80 bg-white p-6 transition-all duration-300 hover:border-emerald-200 hover:shadow-md md:p-7">
+                <p className="text-[11px] font-bold tracking-[0.2em] uppercase text-emerald-600/70">
+                  Community
+                </p>
+                <h3 className="mt-2 text-lg font-bold text-slate-900">
+                  フロントライン
+                </h3>
+                <p className="mt-1 mb-3 text-xs font-semibold text-slate-400">
+                  実践コミュニティ
+                </p>
+                <p className="text-sm leading-[1.8] text-slate-600">
+                  イベント・ワークショップ・共創で
+                  人と企業が交わり、仕事が生まれる場です。
+                </p>
+                <div className="mt-auto pt-4">
+                  <button
+                    onClick={() => scrollToSection("frontline")}
+                    className="text-xs font-semibold text-emerald-700 transition-colors hover:text-emerald-900"
+                  >
+                    詳しく見る &rarr;
+                  </button>
+                </div>
+              </div>
+
+              {/* 事業伴走 */}
+              <div className="group flex flex-col rounded-3xl border border-slate-200/80 bg-white p-6 transition-all duration-300 hover:border-slate-300 hover:shadow-md md:p-7">
+                <p className="text-[11px] font-bold tracking-[0.2em] uppercase text-slate-400">
+                  Consulting
+                </p>
+                <h3 className="mt-2 text-lg font-bold text-slate-900">
+                  事業伴走
+                </h3>
+                <p className="mt-1 mb-3 text-xs font-semibold text-slate-400">
+                  顧客体験 &times; 採用定着力の強化
+                </p>
+                <p className="text-sm leading-[1.8] text-slate-600">
+                  企業の顧客体験・採用・発信・共創を、
+                  現場で一緒に整理し、企画し、実装に近づける伴走です。
+                </p>
+              </div>
+            </div>
+          </Reveal>
+
+          {/* 事業伴走の詳細 */}
+          <Reveal delay={200}>
+            <div className="mt-8 rounded-3xl border border-slate-200/80 bg-white p-6 shadow-sm md:p-8">
+              <h4 className="text-base font-bold text-slate-900">
+                事業伴走について
+              </h4>
+              <p className="mt-3 text-sm leading-[1.8] text-slate-600">
+                価値はあるのに、顧客にうまく伝わっていない。若手に選ばれていない。社内外の魅力が整理されていない。
+                そうした課題を持つ地域企業・中小企業に対して、単なるアドバイスではなく、
+                顧客体験・採用・発信・共創の設計を、現場に近い場所で一緒に整理し、形にし、前に進めます。
+              </p>
+
+              <div className="mt-6 grid gap-5 md:grid-cols-2">
+                <div className="rounded-2xl bg-slate-50 p-5">
+                  <p className="text-xs font-bold tracking-wider uppercase text-slate-400">
+                    伴走でやること
+                  </p>
+                  <ul className="mt-3 space-y-2 text-sm leading-relaxed text-slate-600">
+                    <li className="flex gap-2">
+                      <span className="mt-0.5 text-slate-300">&mdash;</span>
+                      顧客体験や店舗体験の整理
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="mt-0.5 text-slate-300">&mdash;</span>
+                      若手採用の見せ方や導線の整理
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="mt-0.5 text-slate-300">&mdash;</span>
+                      発信テーマやコンテンツの整理
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="mt-0.5 text-slate-300">&mdash;</span>
+                      イベントや共創企画の設計
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="mt-0.5 text-slate-300">&mdash;</span>
+                      若手と企業が交わる実践機会の設計
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="rounded-2xl bg-slate-50 p-5">
+                  <p className="text-xs font-bold tracking-wider uppercase text-slate-400">
+                    成果のイメージ
+                  </p>
+                  <ul className="mt-3 space-y-2 text-sm leading-relaxed text-slate-600">
+                    <li className="flex gap-2">
+                      <span className="mt-0.5 text-slate-300">&mdash;</span>
+                      自社の魅力や課題が整理される
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="mt-0.5 text-slate-300">&mdash;</span>
+                      採用や発信の軸が明確になる
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="mt-0.5 text-slate-300">&mdash;</span>
+                      若手に伝わる企画や見せ方ができる
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="mt-0.5 text-slate-300">&mdash;</span>
+                      イベントや共創の実施につながる
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="mt-0.5 text-slate-300">&mdash;</span>
+                      顧客体験や導線改善の具体案が形になる
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      <div className="h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
+
       {/* ============================== WHY / GAFA ============================== */}
-      <section id="why" className="relative overflow-hidden bg-slate-50/50 py-20 md:py-28">
-        {/* Decorative */}
+      <section id="why" className="relative overflow-hidden py-20 md:py-28">
         <div className="pointer-events-none absolute -left-32 bottom-0 h-96 w-96 rounded-full bg-gradient-to-br from-sky-50/60 to-transparent blur-3xl" />
 
         <div className="mx-auto max-w-6xl px-5 md:px-8">
@@ -238,7 +411,7 @@ export default function HomePage() {
             <p className="text-[11px] font-semibold tracking-[0.3em] uppercase text-slate-400">
               Theme
             </p>
-            <h2 className="mt-3 font-serif text-2xl font-normal tracking-tight text-slate-900 md:text-4xl">
+            <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
               GAFAをリバースエンジニアリングする
             </h2>
           </Reveal>
@@ -277,7 +450,6 @@ export default function HomePage() {
           {/* Comparison cards */}
           <Reveal delay={200}>
             <div className="mt-12 grid gap-5 md:grid-cols-2">
-              {/* Old model */}
               <div className="rounded-3xl border border-slate-200/80 bg-white p-5 transition-all duration-300 hover:shadow-md md:p-7">
                 <p className="text-[11px] font-semibold tracking-[0.2em] uppercase text-slate-400">
                   広告モデルが自然に集めてきたもの
@@ -306,7 +478,6 @@ export default function HomePage() {
                 </ul>
               </div>
 
-              {/* New model */}
               <div className="rounded-3xl border border-cyan-200/60 bg-gradient-to-br from-cyan-50/40 to-white p-5 transition-all duration-300 hover:shadow-md md:p-7">
                 <p className="text-[11px] font-semibold tracking-[0.2em] uppercase text-cyan-600/70">
                   まだ十分にデータ化されていないもの
@@ -340,7 +511,7 @@ export default function HomePage() {
           {/* Targeting → Co-creation */}
           <Reveal delay={300}>
             <div className="mt-10 rounded-3xl border border-slate-200/80 bg-white p-6 shadow-sm md:p-8">
-              <h4 className="font-serif text-lg font-normal text-slate-900 md:text-xl">
+              <h4 className="text-lg font-bold text-slate-900">
                 ターゲティングから、コ・クリエーションへ
               </h4>
 
@@ -358,7 +529,10 @@ export default function HomePage() {
                 <p>
                   一方で、企業が本当に向き合いたいのは、数クリック先の一回きりの購買だけではなく、
                   どんな人たちと長期的な関係性を築き、どんな問いやプロジェクトを一緒に進めていくかという
-                  <span className="font-semibold text-slate-800">共創の単位</span>になりつつあります。
+                  <span className="font-semibold text-slate-800">
+                    共創の単位
+                  </span>
+                  になりつつあります。
                 </p>
               </div>
 
@@ -369,7 +543,9 @@ export default function HomePage() {
                   </p>
                   <ul className="mt-3 space-y-1.5 text-xs leading-relaxed text-slate-500">
                     <li>目的：今期の売上・CVを最大化する</li>
-                    <li>単位：インプレッション / クリック / コンバージョン</li>
+                    <li>
+                      単位：インプレッション / クリック / コンバージョン
+                    </li>
                     <li>評価指標：CPC / CPA / ROAS</li>
                     <li>関係性：一回きりのタッチポイントになりがち</li>
                   </ul>
@@ -380,10 +556,18 @@ export default function HomePage() {
                     コ・クリエーション型のダイレクト広告
                   </p>
                   <ul className="mt-3 space-y-1.5 text-xs leading-relaxed text-slate-300">
-                    <li>目的：特定の個人・コミュニティとの関係を育てる</li>
-                    <li>単位：共創プロジェクトや学び・アウトプットの履歴</li>
-                    <li>評価指標：継続的な関係性と、共創から生まれた価値</li>
-                    <li>関係性：「誰とどんな未来をつくるか」が資産になる</li>
+                    <li>
+                      目的：特定の個人・コミュニティとの関係を育てる
+                    </li>
+                    <li>
+                      単位：共創プロジェクトや学び・アウトプットの履歴
+                    </li>
+                    <li>
+                      評価指標：継続的な関係性と、共創から生まれた価値
+                    </li>
+                    <li>
+                      関係性：「誰とどんな未来をつくるか」が資産になる
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -391,7 +575,8 @@ export default function HomePage() {
               <p className="mt-6 text-sm leading-[1.9] text-slate-600">
                 私たちは、広告費の一部を「誰に何を売るか」を決めるターゲティング費ではなく、
                 「誰とどんな未来をつくるか」に投じる
-                <span className="font-semibold text-slate-800">共創予算</span>として機能させることを目指しています。
+                <span className="font-semibold text-slate-800">共創予算</span>
+                として機能させることを目指しています。
                 クリック率ではなく、一緒に積み上がった挑戦の履歴と信用で成果を測る、
                 そんなダイレクトな広告モデルへの移行だと捉えています。
               </p>

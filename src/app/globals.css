@@ -25,12 +25,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Serif for display headings */
-.font-serif {
-  font-family: "Instrument Serif", "Noto Serif JP", "Georgia", "Times New Roman", serif;
-}
-
-/* Selection color */
 ::selection {
   background: rgba(6, 182, 212, 0.15);
   color: #0f172a;
