@@ -119,7 +119,7 @@ export default function HomePage() {
                   将来につながる経験と収入を積み上げる「MyHoodプレイヤー」を増やします。
                 </p>
               </div>
-              <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:gap-4">
+              <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:gap-5">
                 <a
                   href="https://teaser.myhood.aoumi.art/"
                   target="_blank"
@@ -136,6 +136,20 @@ export default function HomePage() {
                 </a>
                 <a
                   href="https://myhood.flutterflow.app/profile"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group inline-flex items-center gap-1.5 text-sm font-semibold text-cyan-700 transition-colors hover:text-cyan-900"
+                >
+                  &alpha;版を見る
+                  <span
+                    className="transition-transform duration-200 group-hover:translate-x-0.5"
+                    aria-hidden
+                  >
+                    &rarr;
+                  </span>
+                </a>
+                <a
+                  href="https://myhoodbeta.web.app/"
                   target="_blank"
                   rel="noreferrer"
                   className="group inline-flex items-center gap-1.5 text-sm font-semibold text-cyan-700 transition-colors hover:text-cyan-900"
