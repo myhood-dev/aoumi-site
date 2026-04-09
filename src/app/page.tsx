@@ -111,7 +111,7 @@ export default function HomePage() {
           <Reveal>
             <div className="flex items-center gap-3">
               <p className="text-[11px] font-semibold tracking-[0.3em] uppercase text-cyan-600">
-                Lifestyle Platform
+                Community SNS
               </p>
               <span className="rounded-full border border-cyan-300/60 bg-cyan-50 px-2.5 py-0.5 text-[10px] font-semibold text-cyan-700">
                 &beta;版検証中
@@ -121,7 +121,7 @@ export default function HomePage() {
               MyHood
             </h2>
             <p className="mt-1 text-sm text-slate-400 md:text-base">
-              若手と企業を、実践でつなぐ共創プラットフォーム
+              若手と企業を、実践でつなぐ共創コミュニティSNS
             </p>
           </Reveal>
 
@@ -130,7 +130,7 @@ export default function HomePage() {
             <div className="mt-10 rounded-3xl border border-cyan-100/80 bg-white/80 p-6 shadow-sm shadow-cyan-100/30 backdrop-blur-sm md:p-8">
               <div className="max-w-2xl space-y-4">
                 <p className="text-sm leading-[1.8] text-slate-600 md:text-[15px]">
-                  MyHoodは、企業と若手を実践活動でつなぐ若手実践共創プラットフォームです。
+                  MyHoodは、企業と若手を実践活動でつなぐ共創コミュニティSNSです。
                   一社に閉じるインターンではなく、複数の企業と横断的に関わりながら、
                   将来につながる経験と収入を積み上げる「MyHoodプレイヤー」を増やします。
                 </p>
@@ -290,7 +290,7 @@ export default function HomePage() {
                 </p>
                 <h3 className="mt-1 text-lg font-bold text-slate-900">MyHood</h3>
                 <p className="mt-1 mb-3 text-xs font-semibold text-slate-400">
-                  若手実践共創プラットフォーム
+                  共創コミュニティSNS
                 </p>
                 <p className="text-sm leading-[1.8] text-slate-600">
                   若手と企業を実践活動でつなぎ、信用と経験が積み上がる基盤を提供します。
@@ -342,9 +342,9 @@ export default function HomePage() {
                 <p className="text-[11px] font-bold tracking-[0.2em] uppercase text-slate-400">
                   Consulting
                 </p>
-                <h3 className="mt-1 text-lg font-bold text-slate-900">事業伴走</h3>
+                <h3 className="mt-1 text-lg font-bold text-slate-900">クリティカルスプリント</h3>
                 <p className="mt-1 mb-3 text-xs font-semibold text-slate-400">
-                  顧客体験 &times; 採用定着力の強化
+                  顧客体験 &times; 採用定着力の強化を実現する事業伴走
                 </p>
                 <p className="text-sm leading-[1.8] text-slate-600">
                   企業の顧客体験・採用・発信・共創を、現場で一緒に整理し、企画し、実装に近づける伴走です。
@@ -357,7 +357,7 @@ export default function HomePage() {
           <Reveal delay={200}>
             <div className="mt-8 rounded-3xl border border-slate-200/80 bg-white p-6 shadow-sm md:p-8">
               <h4 className="text-base font-bold text-slate-900">
-                事業伴走について
+                クリティカルスプリントについて
               </h4>
               <p className="mt-3 text-sm leading-[1.8] text-slate-600">
                 価値はあるのに、顧客にうまく伝わっていない。若手に選ばれていない。社内外の魅力が整理されていない。
