@@ -137,10 +137,19 @@ export default function HomePage() {
                 &beta;版検証中
               </span>
             </div>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
-              MyHood
-            </h2>
-            <p className="mt-1 text-sm text-slate-400 md:text-base">
+            <div className="mt-3 flex items-center gap-3">
+              <Image
+                src="/myhood-logo.png"
+                alt="MyHood logo"
+                width={56}
+                height={56}
+                className="h-11 w-11 md:h-14 md:w-14"
+              />
+              <h2 className="text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
+                MyHood
+              </h2>
+            </div>
+            <p className="mt-2 text-sm text-slate-400 md:text-base">
               若手と企業を、実践でつなぐ共創コミュニティSNS
             </p>
           </Reveal>
@@ -300,10 +309,14 @@ export default function HomePage() {
             <div className="mt-10 grid gap-5 md:grid-cols-3">
               {/* MyHood */}
               <div className="group flex flex-col rounded-3xl border border-cyan-100/60 bg-white p-6 transition-all duration-300 hover:border-cyan-300/60 hover:shadow-lg hover:shadow-cyan-100/30 md:p-7">
-                <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-500 to-sky-500">
-                  <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                  </svg>
+                <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-slate-900 to-slate-800 p-1.5">
+                  <Image
+                    src="/myhood-logo.png"
+                    alt="MyHood logo"
+                    width={48}
+                    height={48}
+                    className="h-full w-full object-contain"
+                  />
                 </div>
                 <p className="text-[11px] font-bold tracking-[0.2em] uppercase text-cyan-600/70">
                   Platform

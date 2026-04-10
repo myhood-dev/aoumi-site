@@ -5,6 +5,7 @@ type Props = {
 /**
  * MyHoodを中心に、個人からなるコミュニティと
  * 企業を中心とした組織が相互循環するイメージを示す図解。
+ * 中心にはMyHoodのシンボルロゴを配置。
  */
 export default function CirculationDiagram({ className = "" }: Props) {
   return (
@@ -17,10 +18,10 @@ export default function CirculationDiagram({ className = "" }: Props) {
         aria-label="MyHoodを中心に、個人コミュニティと企業組織が相互循環する図"
       >
         <defs>
-          <linearGradient id="circ-center" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#06b6d4" />
-            <stop offset="100%" stopColor="#0ea5e9" />
-          </linearGradient>
+          <radialGradient id="circ-center-bg" cx="50%" cy="50%" r="60%">
+            <stop offset="0%" stopColor="#0f172a" />
+            <stop offset="100%" stopColor="#020617" />
+          </radialGradient>
           <linearGradient id="circ-left" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stopColor="#ecfeff" />
             <stop offset="100%" stopColor="#cffafe" />
@@ -168,16 +169,8 @@ export default function CirculationDiagram({ className = "" }: Props) {
           markerEnd="url(#arrow-cyan)"
         />
 
-        {/* Center node — MyHood (hub) */}
+        {/* Center node — MyHood (hub) with logo */}
         <g>
-          <circle
-            cx="320"
-            cy="180"
-            r="92"
-            fill="url(#circ-center)"
-            stroke="#0e7490"
-            strokeWidth="1.5"
-          />
           <circle
             cx="320"
             cy="180"
@@ -188,32 +181,30 @@ export default function CirculationDiagram({ className = "" }: Props) {
             strokeOpacity="0.5"
             strokeDasharray="3 5"
           />
+          <circle
+            cx="320"
+            cy="180"
+            r="92"
+            fill="url(#circ-center-bg)"
+            stroke="#0e7490"
+            strokeWidth="1.5"
+          />
+          <image
+            href="/myhood-logo.png"
+            x="240"
+            y="108"
+            width="160"
+            height="144"
+            preserveAspectRatio="xMidYMid meet"
+          />
           <text
             x="320"
-            y="162"
-            textAnchor="middle"
-            className="fill-cyan-100"
-            style={{ font: "600 11px system-ui, sans-serif", letterSpacing: "0.22em" }}
-          >
-            HUB
-          </text>
-          <text
-            x="320"
-            y="192"
+            y="238"
             textAnchor="middle"
             className="fill-white"
-            style={{ font: "800 28px system-ui, sans-serif", letterSpacing: "0.01em" }}
+            style={{ font: "700 16px system-ui, sans-serif", letterSpacing: "0.02em" }}
           >
             MyHood
-          </text>
-          <text
-            x="320"
-            y="215"
-            textAnchor="middle"
-            className="fill-cyan-50"
-            style={{ font: "500 11px system-ui, sans-serif" }}
-          >
-            共創コミュニティSNS
           </text>
         </g>
 
