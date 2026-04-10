@@ -5,7 +5,8 @@ import Footer from "@/components/Footer";
 import Reveal from "@/components/Reveal";
 
 const FORM_EMBED_URL =
-  "https://citrine-sherbet-de6.notion.site/ebd//33e08794c4f780829cafc8cc7e765176";
+  "https://docs.google.com/forms/d/e/1FAIpQLSeazfdbCe_XcGrlHzeJi98efwT_WKxIjzgN6C1DGKImrBcc2A/viewform?embedded=true";
+const FORM_PUBLIC_URL = "https://forms.gle/Q7UpNSimR3h8ooui9";
 
 export default function ContactPage() {
   return (
@@ -34,16 +35,17 @@ export default function ContactPage() {
             </p>
           </Reveal>
 
-          {/* Form embed */}
+          {/* Form embed (Google Forms) */}
           <Reveal delay={150}>
-            <div className="mt-10 overflow-hidden rounded-3xl border border-cyan-100/80 bg-white shadow-sm shadow-cyan-100/30">
+            <div className="mt-10 overflow-hidden rounded-3xl border border-slate-200/80 bg-white shadow-sm">
               <iframe
                 src={FORM_EMBED_URL}
-                className="block h-[900px] w-full"
+                className="block h-[1690px] w-full"
                 title="青海株式会社へのお問い合わせフォーム"
                 loading="lazy"
-                allowFullScreen
-              />
+              >
+                読み込んでいます…
+              </iframe>
             </div>
           </Reveal>
 
@@ -52,12 +54,12 @@ export default function ContactPage() {
             <p className="mt-6 text-xs leading-relaxed text-slate-500">
               フォームが表示されない場合は、
               <a
-                href="https://citrine-sherbet-de6.notion.site/33e08794c4f780829cafc8cc7e765176"
+                href={FORM_PUBLIC_URL}
                 target="_blank"
                 rel="noreferrer"
                 className="font-semibold text-cyan-700 underline-offset-4 hover:underline"
               >
-                こちらの公開フォーム
+                こちらのフォーム(別タブで開く)
               </a>
               {" "}から直接送信いただくか、
               <a

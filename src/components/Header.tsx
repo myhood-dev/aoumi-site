@@ -85,6 +85,16 @@ export default function Header({ activePage = "top" }: Props) {
           >
             About
           </Link>
+          <Link
+            href="/contact"
+            className={
+              activePage === "contact"
+                ? "rounded-full bg-slate-900 px-4 py-1.5 text-[13px] font-semibold text-white"
+                : "rounded-full bg-slate-900 px-4 py-1.5 text-[13px] font-semibold text-white transition-all duration-200 hover:bg-slate-700"
+            }
+          >
+            Contact
+          </Link>
         </nav>
 
         {/* Mobile hamburger */}
@@ -135,6 +145,13 @@ export default function Header({ activePage = "top" }: Props) {
             className="transition-colors hover:text-slate-900"
           >
             About
+          </Link>
+          <Link
+            href="/contact"
+            onClick={() => setOpen(false)}
+            className="mt-2 rounded-full bg-slate-900 px-6 py-2 text-base font-semibold text-white transition-colors hover:bg-slate-700"
+          >
+            Contact
           </Link>
         </nav>
       </div>
