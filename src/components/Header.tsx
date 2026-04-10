@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 
 type Props = {
-  activePage?: "top" | "news" | "about";
+  activePage?: "top" | "news" | "about" | "contact";
 };
 
 const scrollNavItems = [

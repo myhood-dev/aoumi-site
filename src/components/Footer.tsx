@@ -32,12 +32,12 @@ export default function Footer() {
             >
               About
             </Link>
-            <a
-              href="mailto:info@aoumi.art"
+            <Link
+              href="/contact"
               className="transition-colors hover:text-slate-700"
             >
               Contact
-            </a>
+            </Link>
           </nav>
         </div>
 

@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Reveal from "@/components/Reveal";
@@ -487,8 +488,8 @@ export default function HomePage() {
                   施策の実装まで踏み込み、現場に動きが戻る状態をつくります。
                 </p>
                 <div className="mt-8">
-                  <a
-                    href="mailto:info@aoumi.art?subject=%E3%82%AF%E3%83%AA%E3%83%86%E3%82%A3%E3%82%AB%E3%83%AB%E3%82%B9%E3%83%97%E3%83%AA%E3%83%B3%E3%83%88%E3%81%AE%E8%A9%B1%E3%82%92%E8%81%9E%E3%81%8D%E3%81%9F%E3%81%84"
+                  <Link
+                    href="/contact"
                     className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-cyan-500 to-sky-500 px-7 py-3 text-sm font-semibold text-white shadow-lg shadow-cyan-500/20 transition-all duration-300 hover:shadow-xl hover:shadow-cyan-500/30"
                   >
                     クリティカルスプリントの話を聞く
@@ -498,7 +499,7 @@ export default function HomePage() {
                     >
                       &rarr;
                     </span>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
