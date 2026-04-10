@@ -5,29 +5,25 @@ type Props = {
 /**
  * MyHoodを中心に、個人からなるコミュニティと
  * 企業を中心とした組織が相互循環するイメージを示す図解。
- * 中心にはMyHoodのシンボルロゴを配置。
+ * 中心には円形MyHoodロゴを配置。
  */
 export default function CirculationDiagram({ className = "" }: Props) {
   return (
     <div className={`w-full ${className}`}>
       <svg
-        viewBox="0 0 640 360"
+        viewBox="0 0 720 420"
         xmlns="http://www.w3.org/2000/svg"
         className="block h-auto w-full"
         role="img"
         aria-label="MyHoodを中心に、個人コミュニティと企業組織が相互循環する図"
       >
         <defs>
-          <radialGradient id="circ-center-bg" cx="50%" cy="50%" r="60%">
-            <stop offset="0%" stopColor="#0f172a" />
-            <stop offset="100%" stopColor="#020617" />
-          </radialGradient>
           <linearGradient id="circ-left" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stopColor="#ecfeff" />
             <stop offset="100%" stopColor="#cffafe" />
           </linearGradient>
           <linearGradient id="circ-right" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#f8fafc" />
+            <stop offset="0%" stopColor="#f1f5f9" />
             <stop offset="100%" stopColor="#e2e8f0" />
           </linearGradient>
           <marker
@@ -35,215 +31,188 @@ export default function CirculationDiagram({ className = "" }: Props) {
             viewBox="0 0 10 10"
             refX="8"
             refY="5"
-            markerWidth="6"
-            markerHeight="6"
+            markerWidth="7"
+            markerHeight="7"
             orient="auto-start-reverse"
           >
             <path d="M0,0 L10,5 L0,10 z" fill="#0891b2" />
           </marker>
+          <clipPath id="hub-clip">
+            <circle cx="360" cy="210" r="92" />
+          </clipPath>
           <marker
             id="arrow-slate"
             viewBox="0 0 10 10"
             refX="8"
             refY="5"
-            markerWidth="6"
-            markerHeight="6"
+            markerWidth="7"
+            markerHeight="7"
             orient="auto-start-reverse"
           >
             <path d="M0,0 L10,5 L0,10 z" fill="#64748b" />
           </marker>
         </defs>
 
-        {/* Left node — 個人コミュニティ */}
+        {/* ============ Left node — 個人のコミュニティ ============ */}
         <g>
           <circle
-            cx="100"
-            cy="180"
-            r="78"
+            cx="110"
+            cy="210"
+            r="92"
             fill="url(#circ-left)"
             stroke="#a5f3fc"
             strokeWidth="1.5"
           />
           <text
-            x="100"
-            y="168"
+            x="110"
+            y="196"
             textAnchor="middle"
             className="fill-cyan-700"
-            style={{ font: "600 12px system-ui, sans-serif", letterSpacing: "0.1em" }}
+            style={{
+              font: "600 11px system-ui, -apple-system, sans-serif",
+              letterSpacing: "0.18em",
+            }}
           >
             INDIVIDUALS
           </text>
           <text
-            x="100"
-            y="190"
+            x="110"
+            y="220"
             textAnchor="middle"
-            className="fill-slate-800"
-            style={{ font: "700 15px system-ui, sans-serif" }}
+            className="fill-slate-900"
+            style={{ font: "700 16px system-ui, -apple-system, sans-serif" }}
           >
             個人のコミュニティ
           </text>
           <text
-            x="100"
-            y="210"
+            x="110"
+            y="240"
             textAnchor="middle"
             className="fill-slate-500"
-            style={{ font: "400 11px system-ui, sans-serif" }}
+            style={{ font: "400 11px system-ui, -apple-system, sans-serif" }}
           >
             挑戦・発信・学び
           </text>
         </g>
 
-        {/* Right node — 企業・組織 */}
+        {/* ============ Right node — 企業を中心とした組織 ============ */}
         <g>
           <circle
-            cx="540"
-            cy="180"
-            r="78"
+            cx="610"
+            cy="210"
+            r="92"
             fill="url(#circ-right)"
             stroke="#cbd5e1"
             strokeWidth="1.5"
           />
           <text
-            x="540"
-            y="168"
+            x="610"
+            y="196"
             textAnchor="middle"
             className="fill-slate-600"
-            style={{ font: "600 12px system-ui, sans-serif", letterSpacing: "0.1em" }}
+            style={{
+              font: "600 11px system-ui, -apple-system, sans-serif",
+              letterSpacing: "0.18em",
+            }}
           >
             ORGANIZATIONS
           </text>
           <text
-            x="540"
-            y="190"
+            x="610"
+            y="220"
             textAnchor="middle"
-            className="fill-slate-800"
-            style={{ font: "700 15px system-ui, sans-serif" }}
+            className="fill-slate-900"
+            style={{ font: "700 16px system-ui, -apple-system, sans-serif" }}
           >
             企業を中心とした組織
           </text>
           <text
-            x="540"
-            y="210"
+            x="610"
+            y="240"
             textAnchor="middle"
             className="fill-slate-500"
-            style={{ font: "400 11px system-ui, sans-serif" }}
+            style={{ font: "400 11px system-ui, -apple-system, sans-serif" }}
           >
             事業・採用・共創
           </text>
         </g>
 
-        {/* Arrows: left → center (top curve) */}
+        {/* ============ Arrows (behind center hub) ============ */}
+        {/* Top: left → right (via above hub) */}
         <path
-          d="M 170 150 Q 260 70 330 150"
+          d="M 190 170 Q 360 60 530 170"
           fill="none"
           stroke="#0891b2"
-          strokeWidth="2"
+          strokeWidth="2.25"
           strokeLinecap="round"
           markerEnd="url(#arrow-cyan)"
         />
-        {/* Arrows: center → right (top curve) */}
+        {/* Bottom: right → left (via below hub) */}
         <path
-          d="M 390 150 Q 460 70 550 150"
+          d="M 530 250 Q 360 360 190 250"
           fill="none"
           stroke="#64748b"
-          strokeWidth="2"
+          strokeWidth="2.25"
           strokeLinecap="round"
           markerEnd="url(#arrow-slate)"
-        />
-        {/* Arrows: right → center (bottom curve) */}
-        <path
-          d="M 470 210 Q 400 290 330 210"
-          fill="none"
-          stroke="#64748b"
-          strokeWidth="2"
-          strokeLinecap="round"
-          markerEnd="url(#arrow-slate)"
-        />
-        {/* Arrows: center → left (bottom curve) */}
-        <path
-          d="M 310 210 Q 220 290 150 210"
-          fill="none"
-          stroke="#0891b2"
-          strokeWidth="2"
-          strokeLinecap="round"
-          markerEnd="url(#arrow-cyan)"
         />
 
-        {/* Center node — MyHood (hub) with logo */}
+        {/* Arrow labels */}
+        <text
+          x="360"
+          y="68"
+          textAnchor="middle"
+          className="fill-cyan-700"
+          style={{ font: "600 12px system-ui, -apple-system, sans-serif" }}
+        >
+          挑戦・実績・信用
+        </text>
+        <text
+          x="360"
+          y="378"
+          textAnchor="middle"
+          className="fill-slate-600"
+          style={{ font: "600 12px system-ui, -apple-system, sans-serif" }}
+        >
+          機会・仕事・共創
+        </text>
+
+        {/* ============ Center hub — MyHood circular logo ============ */}
         <g>
+          {/* Soft glow ring */}
           <circle
-            cx="320"
-            cy="180"
-            r="102"
+            cx="360"
+            cy="210"
+            r="108"
             fill="none"
             stroke="#67e8f9"
             strokeWidth="1"
-            strokeOpacity="0.5"
-            strokeDasharray="3 5"
-          />
-          <circle
-            cx="320"
-            cy="180"
-            r="92"
-            fill="url(#circ-center-bg)"
-            stroke="#0e7490"
-            strokeWidth="1.5"
+            strokeOpacity="0.45"
+            strokeDasharray="3 6"
           />
           <image
-            href="/myhood-logo.png"
-            x="240"
-            y="108"
-            width="160"
-            height="144"
-            preserveAspectRatio="xMidYMid meet"
+            href="/myhood-logo-circle.jpg"
+            x="268"
+            y="118"
+            width="184"
+            height="184"
+            preserveAspectRatio="xMidYMid slice"
+            clipPath="url(#hub-clip)"
           />
-          <text
-            x="320"
-            y="238"
-            textAnchor="middle"
-            className="fill-white"
-            style={{ font: "700 16px system-ui, sans-serif", letterSpacing: "0.02em" }}
-          >
-            MyHood
-          </text>
         </g>
 
-        {/* Labels above arrows */}
+        {/* Center hub label (outside the circle, above top arrow) */}
         <text
-          x="250"
-          y="80"
+          x="360"
+          y="30"
           textAnchor="middle"
-          className="fill-cyan-700"
-          style={{ font: "600 11px system-ui, sans-serif" }}
+          className="fill-slate-400"
+          style={{
+            font: "600 11px system-ui, -apple-system, sans-serif",
+            letterSpacing: "0.22em",
+          }}
         >
-          挑戦・実績
-        </text>
-        <text
-          x="435"
-          y="80"
-          textAnchor="middle"
-          className="fill-slate-600"
-          style={{ font: "600 11px system-ui, sans-serif" }}
-        >
-          機会・仕事
-        </text>
-        <text
-          x="230"
-          y="310"
-          textAnchor="middle"
-          className="fill-cyan-700"
-          style={{ font: "600 11px system-ui, sans-serif" }}
-        >
-          信用・経験
-        </text>
-        <text
-          x="415"
-          y="310"
-          textAnchor="middle"
-          className="fill-slate-600"
-          style={{ font: "600 11px system-ui, sans-serif" }}
-        >
-          共創・伴走
+          HUB
         </text>
       </svg>
     </div>
