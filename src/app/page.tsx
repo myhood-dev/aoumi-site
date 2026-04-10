@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Reveal from "@/components/Reveal";
 import WaveDivider from "@/components/WaveDivider";
+import CirculationDiagram from "@/components/CirculationDiagram";
 
 const scrollToSection = (id: string) => {
   const el = document.getElementById(id);
@@ -95,6 +96,25 @@ export default function HomePage() {
               fill="#f0fdfa"
             />
           </svg>
+        </div>
+      </section>
+
+      {/* ============================== BRIDGE ============================== */}
+      <section className="relative bg-teal-50/40">
+        <div className="mx-auto max-w-4xl px-5 py-14 text-center md:px-8 md:py-20">
+          <Reveal>
+            <p className="text-[11px] font-semibold tracking-[0.3em] uppercase text-cyan-600/80">
+              What we do
+            </p>
+            <p className="mt-4 text-2xl font-bold leading-[1.6] tracking-tight text-slate-900 md:text-[32px] md:leading-[1.5]">
+              80億人のアイデンティティを、
+              <br className="hidden sm:block" />
+              80億通りの環境で表現する。
+            </p>
+            <p className="mx-auto mt-5 max-w-2xl text-sm leading-[1.9] text-slate-500 md:text-[15px]">
+              個人・組織・社会。それぞれの挑戦が、それぞれの文脈のまま伝わる世界をつくる。
+            </p>
+          </Reveal>
         </div>
       </section>
 
@@ -394,6 +414,65 @@ export default function HomePage() {
               </div>
             </div>
           </Reveal>
+
+          {/* 3事業の循環ブロック */}
+          <Reveal delay={250}>
+            <div className="mt-10 rounded-3xl border border-cyan-100/80 bg-gradient-to-br from-white via-cyan-50/30 to-white p-6 shadow-sm shadow-cyan-100/20 md:p-10">
+              <div className="text-center">
+                <p className="text-[11px] font-semibold tracking-[0.3em] uppercase text-cyan-600/80">
+                  Circulation
+                </p>
+                <h3 className="mt-3 text-xl font-bold leading-[1.7] tracking-tight text-slate-900 md:text-[26px] md:leading-[1.6]">
+                  つながりが、挑戦を育てる。
+                  <br className="hidden sm:block" />
+                  挑戦が、次のつながりを生む。
+                </h3>
+                <p className="mx-auto mt-4 max-w-2xl text-sm leading-[1.9] text-slate-600 md:text-[15px]">
+                  MyHoodで人と組織が出会い、フロントラインで実践と共創が起こり、
+                  クリティカルスプリントで事業の手触りが変わる。
+                  ひとつの円環の中で、個人も組織も、挑戦と信用を積み重ねていく。
+                </p>
+              </div>
+
+              <div className="mx-auto mt-8 max-w-3xl">
+                <CirculationDiagram />
+              </div>
+            </div>
+          </Reveal>
+
+          {/* クリティカルスプリント CTA */}
+          <Reveal delay={300}>
+            <div className="mt-10 overflow-hidden rounded-3xl bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 p-7 shadow-lg shadow-slate-900/10 md:p-12">
+              <div className="max-w-3xl">
+                <p className="text-[11px] font-semibold tracking-[0.3em] uppercase text-cyan-300/90">
+                  Critical Sprint
+                </p>
+                <h3 className="mt-4 text-2xl font-bold leading-[1.5] tracking-tight text-white md:text-[32px] md:leading-[1.4]">
+                  採用・顧客体験・発信・業務。
+                  <br className="hidden sm:block" />
+                  バラバラに見える課題を、ひとつの線で整える。
+                </h3>
+                <p className="mt-5 text-sm leading-[1.9] text-slate-300 md:text-[15px]">
+                  複合的に絡み合った企業のあらゆる課題を、短期集中で並走。
+                  施策の実装まで踏み込み、現場に動きが戻る状態をつくります。
+                </p>
+                <div className="mt-8">
+                  <a
+                    href="mailto:info@aoumi.art?subject=%E3%82%AF%E3%83%AA%E3%83%86%E3%82%A3%E3%82%AB%E3%83%AB%E3%82%B9%E3%83%97%E3%83%AA%E3%83%B3%E3%83%88%E3%81%AE%E8%A9%B1%E3%82%92%E8%81%9E%E3%81%8D%E3%81%9F%E3%81%84"
+                    className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-cyan-500 to-sky-500 px-7 py-3 text-sm font-semibold text-white shadow-lg shadow-cyan-500/20 transition-all duration-300 hover:shadow-xl hover:shadow-cyan-500/30"
+                  >
+                    クリティカルスプリントの話を聞く
+                    <span
+                      className="transition-transform duration-200 group-hover:translate-x-0.5"
+                      aria-hidden
+                    >
+                      &rarr;
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </Reveal>
         </div>
       </section>
 
@@ -425,6 +504,14 @@ export default function HomePage() {
             <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
               GAFAをリバースエンジニアリングする
             </h2>
+          </Reveal>
+
+          <Reveal delay={80}>
+            <p className="mt-8 max-w-3xl text-xl font-bold leading-[1.6] tracking-tight text-slate-900 md:text-[28px] md:leading-[1.5]">
+              消費を煽る構造から、
+              <br className="hidden sm:block" />
+              挑戦を積み上げる構造へ。
+            </p>
           </Reveal>
 
           <Reveal delay={100}>
